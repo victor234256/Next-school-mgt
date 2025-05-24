@@ -1,3 +1,4 @@
+import AttendanceChart from "@/components/AttendanceChart";
 import CounterChart from "@/components/CounterChart";
 import UserCard from "@/components/UserCard";
 import React from "react";
@@ -20,7 +21,9 @@ export default function AdminPage() {
 						<CounterChart />
 					</div>
 					{/* Attendance */}
-					<div className="w-full lg:w-2/3 h-[450px]"></div>
+					<div className="w-full lg:w-2/3 h-[450px]">
+						<AttendanceChart />
+					</div>
 				</div>
 			</div>
 			{/* Right - Aside */}
