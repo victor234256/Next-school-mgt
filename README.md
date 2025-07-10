@@ -1,10 +1,10 @@
-# School Management Dashboard
+ Next-School Management Dashboard
+🚀 Getting Started
+To start the development server, run:
 
-## Getting Started
-
-First, run the development server:
-
-```bash
+bash
+Copy
+Edit
 npm run dev
 # or
 yarn dev
@@ -12,10 +12,7 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+Then open http://localhost:3000 in your browser to view the app.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can begin development by modifying app/page.tsx. The page will automatically refresh as you make edits.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-## Learn More
