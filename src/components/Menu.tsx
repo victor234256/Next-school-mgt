@@ -1,3 +1,4 @@
+import { role } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,67 +15,67 @@ const menuItems = [
 			{
 				icon: "/teacher.png",
 				label: "Teachers",
-				href: "/list/teachers",
+				href: "/lists/teachers",
 				visible: ["admin", "teacher"],
 			},
 			{
 				icon: "/student.png",
 				label: "Students",
-				href: "/list/students",
+				href: "/lists/students",
 				visible: ["admin", "teacher"],
 			},
 			{
 				icon: "/parent.png",
 				label: "Parents",
-				href: "/list/parents",
+				href: "/lists/parents",
 				visible: ["admin", "teacher"],
 			},
 			{
 				icon: "/subject.png",
 				label: "Subjects",
-				href: "/list/subjects",
+				href: "/lists/subjects",
 				visible: ["admin"],
 			},
 			{
 				icon: "/class.png",
 				label: "Classes",
-				href: "/list/classes",
+				href: "/lists/classes",
 				visible: ["admin", "teacher"],
 			},
 			{
 				icon: "/lesson.png",
 				label: "Lessons",
-				href: "/list/lessons",
+				href: "/lists/lessons",
 				visible: ["admin", "teacher"],
 			},
 			{
 				icon: "/exam.png",
 				label: "Exams",
-				href: "/list/exams",
+				href: "/lists/exams",
 				visible: ["admin", "teacher", "student", "parent"],
 			},
 			{
 				icon: "/assignment.png",
 				label: "Assignments",
-				href: "/list/assignments",
+				href: "/lists/assignments",
 				visible: ["admin", "teacher", "student", "parent"],
 			},
 			{
 				icon: "/result.png",
 				label: "Results",
-				href: "/list/results",
+				href: "/lists/results",
 				visible: ["admin", "teacher", "student", "parent"],
 			},
 			{
 				icon: "/attendance.png",
 				label: "Attendance",
-				href: "/list/attendance",
+				href: "/lists/attendance",
 				visible: ["admin", "teacher", "student", "parent"],
 			},
 			{
 				icon: "/calendar.png",
 				label: "Events",
-				href: "/list/events",
+				href: "/lists/events",
 				visible: ["admin", "teacher", "student", "parent"],
 			},
 			{
@@ -86,7 +87,7 @@ const menuItems = [
 			{
 				icon: "/announcement.png",
 				label: "Announcements",
-				href: "/list/announcements",
+				href: "/lists/announcements",
 				visible: ["admin", "teacher", "student", "parent"],
 			},
 		],
@@ -124,23 +125,27 @@ export default function Menu() {
 					<span className="hidden lg:block text-gray-400 font-light my-4">
 						{i.title}
 					</span>
-					{i.items.map((item) => (
-						<Link
-							href={item.href}
-							key={item.label}
-							className="flex gap-4 items-center justify-center lg:justify-start text-gray-500 py-2"
-						>
-							<Image
-								src={item.icon}
-								alt={item.label}
-								width={20}
-								height={20}
-							/>
-							<span className="hidden lg:block">
-								{item.label}
-							</span>
-						</Link>
-					))}
+					{i.items.map((item) => {
+						if (item.visible.includes(role)) {
+							return (
+								<Link
+									href={item.href}
+									key={item.label}
+									className="flex gap-4 items-center justify-center lg:justify-start text-gray-500 py-2 md:px-2 rounded-md hover:bg-tsky"
+								>
+									<Image
+										src={item.icon}
+										alt={item.label}
+										width={20}
+										height={20}
+									/>
+									<span className="hidden lg:block">
+										{item.label}
+									</span>
+								</Link>
+							);
+						}
+					})}
 				</div>
 			))}
 		</div>
