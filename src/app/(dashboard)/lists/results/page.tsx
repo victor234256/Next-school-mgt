@@ -1,3 +1,4 @@
+import FormData from "@/components/FormData";
 import Pagination from "@/components/Pagination";
 import SearchInput from "@/components/SearchInput";
 import Table from "@/components/Table";
@@ -72,25 +73,19 @@ export default function ResultListPage() {
 			<td className="hidden md:table-cell">{item.date}</td>
 			<td>
 				<div className="flex items-center gap-3">
-					<Link href={`/lists/teachers/${item.id}`}>
-						<button className=" w-7 h-7 rounded-full bg-tsky flex items-center justify-center">
-							<Image
-								src="/edit.png"
-								alt="edit"
-								height={15}
-								width={15}
-							/>
-						</button>
-					</Link>
 					{role === "admin" && (
-						<button className=" w-7 h-7 rounded-full bg-tpurple flex items-center justify-center">
-							<Image
-								src="/delete.png"
-								alt="delete"
-								height={15}
-								width={15}
+						<>
+							<FormData
+								type="update"
+								table="result"
+								data={item}
 							/>
-						</button>
+							<FormData
+								type="delete"
+								table="result"
+								id={item.id}
+							/>
+						</>
 					)}
 				</div>
 			</td>
@@ -122,14 +117,7 @@ export default function ResultListPage() {
 							/>
 						</button>
 						{role === "admin" && (
-							<button className="w-8 h-8 flex items-center justify-center rounded-full bg-tyellow">
-								<Image
-									src="/plus.png"
-									alt="plus"
-									height={14}
-									width={14}
-								/>
-							</button>
+							<FormData type="create" table="result" />
 						)}
 					</div>
 				</div>

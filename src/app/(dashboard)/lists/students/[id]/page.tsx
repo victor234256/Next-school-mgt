@@ -1,13 +1,12 @@
 import Announcement from "@/components/Announcement";
 import EventCalendar from "@/components/Calendar";
-import FormModal from "@/components/FormData";
 import Performance from "@/components/Performance";
 import Timetable from "@/components/Timetable";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-export default function singlePage() {
+export default function StudentSinglePage() {
 	return (
 		<div className="flex-1 p-4 flex flex-col gap-4 xl:flex-row">
 			{/* LEFT */}
@@ -18,7 +17,7 @@ export default function singlePage() {
 					<div className="bg-tsky py-6 px-4 rounded-md flex-1 flex gap-4">
 						<div className="w-1/3">
 							<Image
-								src="https://images.pexels.com/photos/2182979/pexels-photo-2182979.jpeg?auto=compress&cs=tinysrgb&w=1200"
+								src="/profile.jpeg"
 								alt=""
 								width={144}
 								height={144}
@@ -28,26 +27,25 @@ export default function singlePage() {
 						<div className="w-2/3 flex flex-col justify-between gap-4">
 							<div className="flex items-center gap-4">
 								<h1 className="text-xl font-semibold">
-									Victor Londel
+									Leonard Snyder
 								</h1>
-								<FormModal
-									table="teacher"
-									type="update"
-									data={{
-										id: 1,
-										username: "deanguerrero",
-										email: "deanguerrero@gmail.com",
-										password: "password",
-										firstName: "Dean",
-										lastName: "Guerrero",
-										phone: "+1 234 567 89",
-										address: "1234 Main St, Anytown, USA",
-										bloodType: "A+",
-										dateOfBirth: "2000-01-01",
-										sex: "male",
-										img: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200",
-									}}
-								/>
+
+								{/* table="teacher"
+                  type="update"
+                  data={{
+                    id: 1,
+                    username: "deanguerrero",
+                    email: "deanguerrero@gmail.com",
+                    password: "password",
+                    firstName: "Dean",
+                    lastName: "Guerrero",
+                    phone: "+1 234 567 89",
+                    address: "1234 Main St, Anytown, USA",
+                    bloodType: "A+",
+                    dateOfBirth: "2000-01-01",
+                    sex: "male",
+                    img: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1200",
+                 */}
 							</div>
 							<p className="text-sm text-gray-500">
 								Lorem ipsum, dolor sit amet consectetur
@@ -123,9 +121,11 @@ export default function singlePage() {
 								className="w-6 h-6"
 							/>
 							<div className="">
-								<h1 className="text-xl font-semibold">2</h1>
+								<h1 className="text-xl font-semibold">
+									5th
+								</h1>
 								<span className="text-sm text-gray-400">
-									Branches
+									Grade
 								</span>
 							</div>
 						</div>
@@ -139,9 +139,9 @@ export default function singlePage() {
 								className="w-6 h-6"
 							/>
 							<div className="">
-								<h1 className="text-xl font-semibold">6</h1>
+								<h1 className="text-xl font-semibold">8</h1>
 								<span className="text-sm text-gray-400">
-									Lessons
+									Subjects
 								</span>
 							</div>
 						</div>
@@ -155,9 +155,9 @@ export default function singlePage() {
 								className="w-6 h-6"
 							/>
 							<div className="">
-								<h1 className="text-xl font-semibold">6</h1>
+								<h1 className="text-xl font-semibold">5</h1>
 								<span className="text-sm text-gray-400">
-									Classes
+									Class
 								</span>
 							</div>
 						</div>
@@ -165,7 +165,7 @@ export default function singlePage() {
 				</div>
 				{/* BOTTOM */}
 				<div className="mt-4 bg-white rounded-md p-4 h-[800px]">
-					<h1>Teacher&apos;s Schedule</h1>
+					<h1>Student&apos;s Schedule</h1>
 					<Timetable />
 				</div>
 			</div>
@@ -180,31 +180,31 @@ export default function singlePage() {
 							className="p-3 rounded-md bg-tlightSky"
 							href="/"
 						>
-							Teacher&apos;s Classes
+							Student&apos;s Classes
 						</Link>
 						<Link
 							className="p-3 rounded-md bg-tpurple"
 							href="/"
 						>
-							Teacher&apos;s Students
+							Student&apos;s Teacher
 						</Link>
 						<Link
 							className="p-3 rounded-md bg-tlightYellow"
 							href="/"
 						>
-							Teacher&apos;s Lessons
+							Student&apos; Result
 						</Link>
 						<Link
 							className="p-3 rounded-md bg-pink-50"
 							href="/"
 						>
-							Teacher&apos;s Exams
+							Student&apos;s Exams
 						</Link>
 						<Link
 							className="p-3 rounded-md bg-tlightSky"
 							href="/"
 						>
-							Teacher&apos;s Assignments
+							Student&apos;s Assignments
 						</Link>
 					</div>
 				</div>

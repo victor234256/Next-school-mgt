@@ -1,3 +1,4 @@
+import FormData from "@/components/FormData";
 import Pagination from "@/components/Pagination";
 import SearchInput from "@/components/SearchInput";
 import Table from "@/components/Table";
@@ -79,7 +80,7 @@ export default function StudentsListPage() {
 			</td>
 			<td>
 				<div className="flex items-center gap-3">
-					<Link href={`/lists/teachers/${item.id}`}>
+					<Link href={`/lists/students/${item.id}`}>
 						<button className=" w-7 h-7 rounded-full bg-tsky flex items-center justify-center">
 							<Image
 								src="/view.png"
@@ -90,14 +91,11 @@ export default function StudentsListPage() {
 						</button>
 					</Link>
 					{role === "admin" && (
-						<button className=" w-7 h-7 rounded-full bg-tpurple flex items-center justify-center">
-							<Image
-								src="/delete.png"
-								alt="delete"
-								height={15}
-								width={15}
-							/>
-						</button>
+						<FormData
+							type="delete"
+							table="student"
+							id={item.id}
+						/>
 					)}
 				</div>
 			</td>
@@ -129,14 +127,7 @@ export default function StudentsListPage() {
 							/>
 						</button>
 						{role === "admin" && (
-							<button className="w-8 h-8 flex items-center justify-center rounded-full bg-tyellow">
-								<Image
-									src="/plus.png"
-									alt="plus"
-									height={14}
-									width={14}
-								/>
-							</button>
+							<FormData type="create" table="student" />
 						)}
 					</div>
 				</div>

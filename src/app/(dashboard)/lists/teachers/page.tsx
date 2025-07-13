@@ -1,3 +1,4 @@
+import FormData from "@/components/FormData";
 import Pagination from "@/components/Pagination";
 import SearchInput from "@/components/SearchInput";
 import Table from "@/components/Table";
@@ -97,14 +98,11 @@ export default function TeachersListPage() {
 						</button>
 					</Link>
 					{role === "admin" && (
-						<button className=" w-7 h-7 rounded-full bg-tpurple flex items-center justify-center">
-							<Image
-								src="/delete.png"
-								alt="delete"
-								height={15}
-								width={15}
-							/>
-						</button>
+						<FormData
+							type="delete"
+							table="teacher"
+							id={item.id}
+						/>
 					)}
 				</div>
 			</td>
@@ -135,14 +133,9 @@ export default function TeachersListPage() {
 								width={14}
 							/>
 						</button>
-						<button className="w-8 h-8 flex items-center justify-center rounded-full bg-tyellow">
-							<Image
-								src="/plus.png"
-								alt="plus"
-								height={14}
-								width={14}
-							/>
-						</button>
+						{role === "admin" && (
+							<FormData type="create" table="teacher" />
+						)}
 					</div>
 				</div>
 			</div>
